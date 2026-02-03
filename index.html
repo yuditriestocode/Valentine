@@ -28,6 +28,7 @@
     }
   </style>
 </head>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <body class="gradient-background">
   <div class="flex items-center justify-center h-screen">
     <div class="flex flex-col items-center p-4">
@@ -46,8 +47,7 @@
     </div>
   </div>
 
-  <script type="module">
-    import confetti from 'https://cdn.skypack.dev/canvas-confetti';
+  <script>
     const yesButton = document.getElementById('yesButton');
     const noButton = document.getElementById('noButton');
     const imageDisplay = document.getElementById('imageDisplay');
@@ -88,10 +88,15 @@
       imageDisplay.src = 'images/image7.gif'; // Change to image7.gif
       valentineQuestion.textContent = "Yayyy!! :3"; // Change the question text
       responseButtons.style.display = 'none'; // Hide both buttons
-      confetti(); // Trigger confetti animation
+      confetti.create(document.body, { resize: true })({
+  particleCount: 200,
+  spread: 160
+});
+ // Trigger confetti animation
     });
   </script>  
 </body>
 
 </html>
+
 
